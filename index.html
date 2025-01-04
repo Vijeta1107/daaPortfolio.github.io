@@ -17,8 +17,8 @@
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      color: #3d3d3d;
-      background-color: #f7f7f7;
+      color: #2c3a34;
+      background-color: #f7f9f8;
     }
 
     h1 {
@@ -26,7 +26,7 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 20px;
-      color: #6a1b9a;
+      color: #1e6f5c;
       text-align: center;
       margin-top: 30px;
     }
@@ -34,15 +34,13 @@
     p {
       font-size: 1.1rem;
       line-height: 1.8;
-      color: #3d3d3d;
+      color: #2c3a34;
       text-align: center;
     }
 
-    /* Background Styling */
+    /* Background and Section Styling */
     .section {
-      background-image: url('city_bus_network.jpg');
-      background-size: cover;
-      background-position: center;
+      background-color: #eaf4f4; /* Light aquatone */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -51,7 +49,7 @@
     }
 
     .section:nth-child(even) {
-      background-color: #fce4ec;
+      background-color: #d8efec; /* Balsam green */
     }
 
     /* Content Styling */
@@ -64,20 +62,24 @@
       text-align: center;
     }
 
-    /* Navigation Menu */
-    .floating-menu {
+    /* Navigation Menu (Top) */
+    .top-menu {
       position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #2c3a34; /* Darker green */
+      color: white;
       display: flex;
+      justify-content: center;
       gap: 10px;
+      padding: 10px 0;
       z-index: 1000;
     }
 
-    .floating-menu button {
+    .top-menu button {
       padding: 10px 20px;
-      background: #7a4e94;
+      background: #1e6f5c; /* Aquatone */
       color: #fff;
       border: none;
       border-radius: 5px;
@@ -86,8 +88,8 @@
       transition: background 0.3s ease;
     }
 
-    .floating-menu button:hover {
-      background: #ec407a;
+    .top-menu button:hover {
+      background: #3d8577; /* Slightly brighter aquatone */
     }
 
     /* Smooth Animations */
@@ -105,6 +107,15 @@
 </head>
 
 <body>
+  <!-- Navigation Menu at the Top -->
+  <div class="top-menu">
+    <button onclick="fullpage_api.moveTo(1)">Introduction</button>
+    <button onclick="fullpage_api.moveTo(2)">About Course</button>
+    <button onclick="fullpage_api.moveTo(3)">Course Project</button>
+    <button onclick="fullpage_api.moveTo(4)">Team Assessment</button>
+    <button onclick="fullpage_api.moveTo(5)">Learning Reflections</button>
+  </div>
+
   <!-- FullPage.js Sections -->
   <div id="fullpage">
     <!-- Section 1: Introduction -->
@@ -138,7 +149,7 @@
       <h1>Team Members</h1>
       <div class="content">
         <p><strong>Md Waseem R Naikar</strong></p>
-        <p><a href="BC.html" style="color: #6a1b9a;">View Business Case</a></p>
+        <p><a href="BC.html" style="color: #1e6f5c;">View Business Case</a></p>
       </div>
     </div>
 
@@ -149,15 +160,6 @@
         <p>Reflecting on algorithmic problem-solving techniques, including efficiency analysis, practical applications, and optimization modeling.</p>
       </div>
     </div>
-  </div>
-
-  <!-- Floating Navigation -->
-  <div class="floating-menu">
-    <button onclick="fullpage_api.moveTo(1)">Introduction</button>
-    <button onclick="fullpage_api.moveTo(2)">About Course</button>
-    <button onclick="fullpage_api.moveTo(3)">Course Project</button>
-    <button onclick="fullpage_api.moveTo(4)">Team Assessment</button>
-    <button onclick="fullpage_api.moveTo(5)">Learning Reflections</button>
   </div>
 
   <!-- FullPage.js Script -->
