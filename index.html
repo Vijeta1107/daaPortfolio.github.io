@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Design and Analysis of Algorithms</title>
+  <title>City Bus Network Optimization</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
@@ -17,81 +17,79 @@
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      color: #1D3C56; /* Ocean Blue */
-      background-color: #D1B097; /* Soft Sand */
+      color: #2e4756; /* Aegean dark */
+      background-color: #f0f4f8; /* Aegean light */
     }
 
     h1 {
       font-family: 'Merriweather', serif;
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 20px;
-      color: #1D3C56; /* Ocean Blue */
+      color: #1a5c7e; /* Aegean blue */
+      text-align: center;
+      margin-top: 30px;
     }
 
     p {
       font-size: 1.1rem;
       line-height: 1.8;
-      color: #3E4A32; /* Dark Olive */
+      color: #2e4756;
+      text-align: center;
     }
 
-    /* Floating Navigation */
-    .floating-menu {
-      position: fixed;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.85); /* Light background */
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-    }
-
-    .floating-menu a {
-      display: block;
-      padding: 10px 15px;
-      color: #1D3C56; /* Ocean Blue */
-      text-decoration: none;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    .floating-menu a:hover {
-      background: #A9D1C2; /* Light Aqua */
-      color: #FFF;
-    }
-
-    /* Grid Layout for Sections */
+    /* Background and Section Styling */
     .section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      background-color: #ebf3f8; /* Aegean pale */
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      padding: 60px 10%;
+      justify-content: center;
+      height: 100vh;
     }
 
     .section:nth-child(even) {
-      background-color: #A3C9C8; /* Seafoam Green */
+      background-color: #d0e6f1; /* Aegean sky */
     }
 
-    .section img {
+    /* Content Styling */
+    .content {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      text-align: center;
+    }
+
+    /* Navigation Menu (Top) */
+    .top-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      border-radius: 10px;
+      background: #588BAE; /* Aegean blue */
+      color: white;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 0;
+      z-index: 1000;
     }
 
-    /* Hover Effects */
-    .hover-box {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      padding: 20px;
-      background: #FF6B6B; /* Warm Coral */
+    .top-menu button {
+      padding: 10px 20px;
+      background: #2e4756; /* Aegean dark */
       color: #fff;
-      border-radius: 8px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
     }
 
-    .hover-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-      background: #FF3B3B; /* Darker Coral on Hover */
+    .top-menu button:hover {
+      background: #1a5c7e; /* Slightly brighter Aegean */
     }
 
     /* Smooth Animations */
@@ -109,65 +107,58 @@
 </head>
 
 <body>
-  <!-- Floating Navigation -->
-  <div class="floating-menu">
-    <a href="#intro">Introduction</a>
-    <a href="#course-about">About Course</a>
-    <a href="#course-project">Course Project</a>
-    <a href="#team-assessment">Team Assessment</a>
-    <a href="#course-learning">Learning Reflections</a>
+  <!-- Navigation Menu at the Top -->
+  <div class="top-menu">
+    <button onclick="fullpage_api.moveTo(1)">Introduction</button>
+    <button onclick="fullpage_api.moveTo(2)">About Course</button>
+    <button onclick="fullpage_api.moveTo(3)">Course Project</button>
+    <button onclick="fullpage_api.moveTo(4)">Team Assessment</button>
+    <button onclick="fullpage_api.moveTo(5)">Learning Reflections</button>
   </div>
 
   <!-- FullPage.js Sections -->
   <div id="fullpage">
     <!-- Section 1: Introduction -->
     <div class="section animate-in" id="intro">
-      <div>
-        <h1>Design and Analysis of Algorithms</h1>
+      <h1>City Bus Network Optimization</h1>
+      <div class="content">
         <p>NAME: MOHAMMED WASEEM R NAIKAR</p>
         <p>USN: 01FE24BCS406S</p>
-        <p>An advanced course exploring the design and analysis of algorithms, including theoretical and practical concepts.</p>
+        <p>An advanced course exploring optimization strategies for city bus networks, improving efficiency and connectivity.</p>
       </div>
-      <img src="intro_image.jpg" alt="Introduction">
     </div>
 
     <!-- Section 2: About Course -->
     <div class="section animate-in" id="course-about">
-      <div>
-        <h1>About Course</h1>
-        <p>This course encompasses essential topics like Sorting Techniques, Graph Traversals, Advanced Trees, and Dynamic Programming.</p>
+      <h1>About Course</h1>
+      <div class="content">
+        <p>This course focuses on algorithmic techniques for optimizing city bus networks, including dynamic programming, graph theory, and real-world applications.</p>
       </div>
-      <img src="course_about.jpg" alt="About Course">
     </div>
 
     <!-- Section 3: Course Project -->
     <div class="section animate-in" id="course-project">
-      <div>
-        <h1>Course Project</h1>
-        <p>Applying algorithmic methods for efficient solutions to real-world problems.</p>
+      <h1>Course Project</h1>
+      <div class="content">
+        <p>Developing a simulation model for an optimized city bus network, utilizing data-driven approaches for route planning and scheduling.</p>
       </div>
-      <img src="project_image.jpg" alt="Course Project">
     </div>
 
     <!-- Section 4: Team Assessment -->
     <div class="section animate-in" id="team-assessment">
-      <div>
-        <h1>Team Members</h1>
-        <div class="hover-box">
-          <p><strong>Md Waseem R Naikar</strong></p>
-          <p><a href="BC.html">View Business Case</a></p>
-        </div>
+      <h1>Team Members</h1>
+      <div class="content">
+        <p><strong>Md Waseem R Naikar</strong></p>
+        <p><a href="BC.html" style="color: #1a5c7e;">View Business Case</a></p>
       </div>
-      <img src="team.jpg" alt="Team">
     </div>
 
     <!-- Section 5: Learning Reflections -->
     <div class="section animate-in" id="course-learning">
-      <div>
-        <h1>Learning Reflections</h1>
-        <p>Reflecting on algorithmic problem-solving techniques, efficiency analysis, and practical implementations.</p>
+      <h1>Learning Reflections</h1>
+      <div class="content">
+        <p>Reflecting on algorithmic problem-solving techniques, including efficiency analysis, practical applications, and optimization modeling.</p>
       </div>
-      <img src="learning.jpg" alt="Learning Reflections">
     </div>
   </div>
 
@@ -175,10 +166,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.19/fullpage.min.js"></script>
   <script>
     new fullpage('#fullpage', {
-      scrollBar: true,
-      navigation: true,
+      scrollBar: false, /* Disable scrolling */
+      navigation: false, /* No side navigation */
       navigationPosition: 'right',
-      showActiveTooltip: true,
+      showActiveTooltip: false,
     });
 
     // Intersection Observer for Animation
