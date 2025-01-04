@@ -1,90 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        h1, h2, h3 {
-            color: #4CAF50;
-        }
-        a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        dl {
-            margin: 20px 0;
-            padding: 0;
-        }
-        dt {
-            font-weight: bold;
-        }
-        dd {
-            margin: 0 0 10px 20px;
-        }
-        blockquote {
-            font-style: italic;
-            margin: 20px 0;
-            padding: 10px 20px;
-            background: #fff;
-            border-left: 4px solid #4CAF50;
-            color: #555;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design and Analysis of Algorithms</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- FullPage.js Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.19/fullpage.min.css">
+
+  <style>
+    /* Base Styles */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #1b1b1b;
+      background-color: #f4faff;
+    }
+
+    h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #004d40;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    /* Floating Navigation */
+    .floating-menu {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      background: rgba(0, 77, 64, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .floating-menu a {
+      display: block;
+      padding: 10px 15px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .floating-menu a:hover {
+      background: #00bfa5;
+      color: #fff;
+    }
+
+    /* Grid Layout for Sections */
+    .section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+      padding: 60px 10%;
+    }
+
+    .section:nth-child(even) {
+      background-color: #e0f7fa;
+    }
+
+    .section:nth-child(odd) {
+      background-color: #f4faff;
+    }
+
+    .section img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Hover Effects */
+    .hover-box {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 77, 64, 0.3);
+    }
+
+    /* Smooth Animations */
+    .animate-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .animate-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Hello, I'm [Your Name] 👋</h1>
-    <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
+  <!-- Floating Navigation -->
+  <div class="floating-menu">
+    <a href="#intro">Introduction</a>
+    <a href="#course-about">About Course</a>
+    <a href="#course-project">Course Project</a>
+    <a href="#team-assessment">Team Assessment</a>
+    <a href="#course-learning">Learning Reflections</a>
+  </div>
 
-    <h2>🛠 Projects</h2>
-    <ul>
-        <li><strong>Project 1</strong>: A short description of your project.</li>
-        <li><strong>Project 2</strong>: A short description of another project.</li>
-    </ul>
+  <!-- FullPage.js Sections -->
+  <div id="fullpage">
+    <!-- Section 1: Introduction -->
+    <div class="section animate-in" id="intro">
+      <div>
+        <h1>Design and Analysis of Algorithms</h1>
+        <p>NAME: MOHAMMED WASEEM R NAIKAR</p>
+        <p>USN: 01FE24BCS406S</p>
+        <p>An advanced course exploring the design and analysis of algorithms, including theoretical and practical concepts.</p>
+      </div>
+      <img src="intro_image.jpg" alt="Introduction">
+    </div>
 
-    <h2>🚀 Skills</h2>
-    <ul>
-        <li>C++, Python, JavaScript</li>
-        <li>Data Structures and Algorithms</li>
-        <li>Web Development (React.js, Node.js)</li>
-    </ul>
+    <!-- Section 2: About Course -->
+    <div class="section animate-in" id="course-about">
+      <div>
+        <h1>About Course</h1>
+        <p>This course encompasses essential topics like Sorting Techniques, Graph Traversals, Advanced Trees, and Dynamic Programming.</p>
+      </div>
+      <img src="course_about.jpg" alt="About Course">
+    </div>
 
-    <h2>🌐 Find Me Online</h2>
-    <ul>
-        <li><a href="https://github.com/your-github-username" target="_blank">GitHub</a></li>
-        <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a></li>
-    </ul>
+    <!-- Section 3: Course Project -->
+    <div class="section animate-in" id="course-project">
+      <div>
+        <h1>Course Project</h1>
+        <p>Applying algorithmic methods for efficient solutions to real-world problems.</p>
+      </div>
+      <img src="project_image.jpg" alt="Course Project">
+    </div>
 
-    <h2>Portfolio Topic</h2>
-    <dl>
-        <dt>Course Name</dt>
-        <dd>Algorithmic Problem Solving</dd>
-        <dt>Course Code</dt>
-        <dd>Course Code Placeholder</dd>
-        <dt>Name</dt>
-        <dd>Your Name</dd>
-        <dt>SRN</dt>
-        <dd>Your SRN</dd>
-        <dt>Course Instructor</dt>
-        <dd>Instructor Name Placeholder</dd>
-        <dt>University</dt>
-        <dd>Your University Name</dd>
-        <dt>Portfolio Topic/Domain</dt>
-        <dd>Google</dd>
-    </dl>
+    <!-- Section 4: Team Assessment -->
+    <div class="section animate-in" id="team-assessment">
+      <div>
+        <h1>Team Members</h1>
+        <div class="hover-box">
+          <p><strong>Md Waseem R Naikar</strong></p>
+          <p><a href="BC.html">View Business Case</a></p>
+        </div>
+      </div>
+      <img src="team.jpg" alt="Team">
+    </div>
 
-    <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
+    <!-- Section 5: Learning Reflections -->
+    <div class="section animate-in" id="course-learning">
+      <div>
+        <h1>Learning Reflections</h1>
+        <p>Reflecting on algorithmic problem-solving techniques, efficiency analysis, and practical implementations.</p>
+      </div>
+      <img src="learning.jpg" alt="Learning Reflections">
+    </div>
+  </div>
+
+  <!-- FullPage.js Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.19/fullpage.min.js"></script>
+  <script>
+    new fullpage('#fullpage', {
+      scrollBar: true,
+      navigation: true,
+      navigationPosition: 'right',
+      showActiveTooltip: true,
+    });
+
+    // Intersection Observer for Animation
+    const sections = document.querySelectorAll('.animate-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
