@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart City Design</title>
+    <title>Smart City Design - Portfolio & Course Project</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -11,6 +11,7 @@
             font-family: 'Poppins', sans-serif;
             background-color: #dfffd6; /* Light green background */
             color: #333;
+            scroll-behavior: smooth; /* For smooth scrolling between sections */
         }
 
         /* Navigation Bar Styles */
@@ -18,6 +19,9 @@
             background-color: #27ae60; /* Green background */
             padding: 10px 20px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         nav a {
             color: white;
@@ -35,7 +39,7 @@
         /* Personal Information Section */
         .personal-info {
             background-color: #fff;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
             margin: 20px auto;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -44,7 +48,7 @@
         }
         .personal-info h1 {
             color: #27ae60;
-            font-size: 28px;
+            font-size: 32px;
             margin: 0;
         }
         .personal-info p {
@@ -58,36 +62,41 @@
             font-weight: bold;
         }
 
-        /* Course Project Section Styles */
+        /* Course Project Section */
         .content-section {
             background-color: #fff;
-            padding: 20px;
+            padding: 40px 20px;
             margin: 20px auto;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             max-width: 80%;
             border-radius: 10px;
         }
+
         .content-section h1 {
             font-size: 32px;
             color: #27ae60;
             text-align: center;
             margin-bottom: 20px;
         }
+
         .content-section h2 {
             font-size: 24px;
             color: #27ae60;
             margin: 15px 0;
         }
+
         .content-section p {
             font-size: 16px;
             color: #333;
             line-height: 1.6;
             margin-bottom: 10px;
         }
+
         .content-section ul {
             list-style-type: square;
             padding-left: 20px;
         }
+
         .content-section img {
             max-width: 100%;
             height: auto;
@@ -99,18 +108,44 @@
     <!-- Navigation Bar -->
     <nav>
         <a href="#my-portfolio">My Portfolio</a>
-        <a href="Cours_Introduction.html" target="_blank"><strong>Course Introduction</strong></a>
-        <a href="Course_Project_Introduction.html" target="_blank"><strong>Course Project Introduction</strong></a>
-        <a href="Business_Models.html" target="_blank"><strong>Business Models</strong></a>
+        <a href="#course-project">Course Project Introduction</a>
+        <a href="#business-models">Business Models</a>
     </nav>
 
-    <!-- Course Project Section -->
+    <!-- My Portfolio Section -->
+    <div id="my-portfolio" class="personal-info">
+        <h1>Anuja Hanamagoudar</h1>
+        <p>Welcome to my portfolio! I am passionate about technology and problem-solving.</p>
+
+        <h2>🛠 Projects</h2>
+        <p><strong>Project 1:</strong> Smart City Rajpur is an ambitious urban development project aimed at transforming Rajpur into a modern, sustainable, and technology-driven city. The initiative focuses on improving infrastructure, including smart traffic management, efficient waste disposal systems, and reliable public transportation.</p>
+
+        <h2>🚀 Skills</h2>
+        <p>C, C++ <br> Data Structures and Algorithms</p>
+
+        <h2>🌐 Find Me Online</h2>
+        <p><a href="https://github.com/yourusername" target="_blank">GitHub</a></p>
+
+        <h2>Portfolio Topic</h2>
+        <p><strong>Course Name:</strong> Algorithmic Problem Solving <br> <strong>Course Code:</strong> 24ECSC205</p>
+
+        <h2>Instructor & University</h2>
+        <p><strong>Instructor:</strong> Arundhati Aralimatti <br> <strong>University:</strong> KLE Technological University, Hubballi</p>
+
+        <h2>Portfolio Topic/Domain</h2>
+        <p>Smart City</p>
+
+        <h2>Inspirational Quote</h2>
+        <p>“The only way to do great work is to love what you do.” – Steve Jobs</p>
+    </div>
+
+    <!-- Course Project Introduction Section -->
     <div id="course-project" class="content-section">
         <h1>Course Project Introduction</h1>
         <h1>RAJPUR</h1>
         <h2>WELCOME TO OUR TEAM PORTFOLIO ON SMART CITY PROJECT</h2>
         <img src="smart_city.jpg" alt="Smart City" width="900" height="800">
-        
+
         <h2>Problem Space:</h2>
         <p>Cities are growing rapidly, leading to challenges in infrastructure, resource management, and urban living quality. The Smart City Rajpur project aims to address these challenges and enhance urban living by integrating technology to improve efficiency, sustainability, and quality of life.</p>
 
@@ -128,5 +163,13 @@
         <h2>Problem Definition:</h2>
         <p>The goal is to transform Rajpur into a smart city by utilizing technology to address urban challenges, improve the quality of life for residents, and ensure the city's sustainability for future generations. This includes developing systems that support efficient resource management, enhance safety, and improve urban services.</p>
     </div>
+
+    <!-- Additional Content Section for Business Models (if applicable) -->
+    <div id="business-models" class="content-section">
+        <h1>Business Models</h1>
+        <p>Content related to Business Models can be added here.</p>
+    </div>
+
 </body>
 </html>
+
