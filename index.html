@@ -1,65 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart City Design</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #dfffd6; /* Light green background */
-            color: #333;
-        }
-        /* Navigation Bar Styles */
-        nav {
-            background-color: #27ae60; /* Green background */
-            padding: 10px 20px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            font-size: 18px;
-            margin: 0 15px;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        nav a:hover {
-            background-color: #2ecc71; /* Lighter green on hover */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Bus Network Optimization</title>
 
-        /* Personal Information Section */
-        .personal-info {
-            background-color: #fff;
-            padding: 20px;
-            text-align: center;
-            margin: 20px auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 80%;
-            border-radius: 10px;
-        }
-        .personal-info h1 {
-            color: #27ae60;
-            font-size: 28px;
-            margin: 0;
-        }
-        .personal-info p {
-            font-size: 16px;
-            color: #333;
-            line-height: 1.6;
-        }
-        .personal-info a {
-            color: #27ae60;
-            text-decoration: none;
-            font-weight: bold;
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
-        /* Center Bar and Content Section Styles */
-        .center-bar {
-            background-color: #fff; /* White bar */
+  <!-- FullPage.js Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.19/fullpage.min.css">
+
+  <style>
+    /* Base Styles */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #2e4756; /* Aegean dark */
+      background-color: #f0f4f8; /* Aegean light */
+      scroll_behavior:smooth;
+    }
+
+    h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1a5c7e; /* Aegean blue */
+      text-align: center;
+      margin-top: 30px;
+    }
+      h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1a5c7e; /* Aegean blue */
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #2e4756;
+      text-align: center;
+    }
+
+    /* Background and Section Styling */
+    .section {
+      background-color: #ebf3f8; /* Aegean pale */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      scroll-snap-align:start;
+      scroll-snap-stop:always;
+    }
+
+    .section:nth-child(even) {
+      background-color: #d0e6f1; /* Aegean sky */
+    }
+
+    /* Content Styling */
+           .center-bar {
+            background-color:#588BAE; 
             padding: 20px;
             text-align: center;
             margin: 20px auto;
@@ -69,12 +76,12 @@
         }
         .center-bar h1 {
             font-size: 28px;
-            color: #27ae60;
+            color:  #1a5c7e;;
             margin: 0;
         }
         .center-bar h2 {
             font-size: 22px;
-            color: #27ae60;
+            color: #1a5c7e;;
             margin: 5px 0 0;
         }
         .content {
@@ -89,12 +96,12 @@
         }
         .content-section h1 {
             font-size: 28px;
-            color: #27ae60;
+            color:  #1a5c7e;
             margin-bottom: 10px;
         }
         .content-section h2 {
             font-size: 22px;
-            color: #27ae60;
+            color:  #1a5c7e;
             margin-top: 0;
         }
         .content-row {
@@ -113,7 +120,7 @@
         }
         .content-box h2 {
             font-size: 22px;
-            color: #27ae60;
+            color:  #1a5c7e;
             margin-bottom: 10px;
         }
         .content-box p {
@@ -121,93 +128,99 @@
             color: #333;
             line-height: 1.6;
         }
-        .animate-in {
+
+    /* Navigation Menu (Top) */
+    .top-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #588BAE; /* Aegean blue */
+      color: white;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    .top-menu button {
+      padding: 10px 20px;
+      background: #2e4756; /* Aegean dark */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .top-menu button:hover {
+      background: #1a5c7e; /* Slightly brighter Aegean */
+    }
+
+  /* Smooth Animations */
+      .animate-in {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      transform: translateY(50px);
+      transition: opacity 2s ease-out, transform 2s ease-out;
     }
 
     .animate-in.visible {
       opacity: 1;
       transform: translateY(0);
-    }
-
-    </style>
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="#my-portfolio">My Portfolio</a>
-        <a href="Cours_Introduction.html" target="_blank"><strong>Course Introduction</strong></a>
-        <a href="Course_Project_Introduction.html" target="_blank"><strong>Course Project Introduction</strong></a>
-        <a href="Business_Models.html" target="_blank"><strong>Business Models</strong></a>
-    </nav>
+  <!-- Navigation Menu at the Top -->
+  <div class="top-menu">
+    <button onclick="fullpage_api.moveTo(1)">Introduction</button>
+    <button onclick="fullpage_api.moveTo(2)">About Course</button>
+    <button onclick="fullpage_api.moveTo(3)">Course Project</button>
+    <button onclick="fullpage_api.moveTo(4)">Team Assessment</button>
+    <button onclick="fullpage_api.moveTo(5)">Learning Reflections</button>
+  </div>
 
-    <!-- Personal Information Section -->
-    <div id="my-portfolio" class="personal-info">
-        <h1>Anuja Hanamagoudar</h1>
-        <p>Welcome to my portfolio! I am passionate about technology and problem-solving.</p>
-
-        <h2>🛠 Projects</h2>
-        <p><strong>Project 1:</strong> Smart City Rajpur is an ambitious urban development project aimed at transforming Rajpur into a modern, sustainable, and technology-driven city. The initiative focuses on improving infrastructure, including smart traffic management, efficient waste disposal systems, and reliable public transportation. With the integration of IoT (Internet of Things) technology, the city seeks to enhance the quality of life for its residents by providing better healthcare, education, and safety services. Renewable energy solutions, green spaces, and eco-friendly practices are central to the vision, ensuring that Rajpur becomes an environmentally sustainable and future-ready urban space.</p>
-
-        <h2>🚀 Skills</h2>
-        <p>C, C++ <br> Data Structures and Algorithms</p>
-
-        <h2>🌐 Find Me Online</h2>
-        <p><a href="https://github.com/yourusername" target="_blank">GitHub</a></p>
-
-        <h2>Portfolio Topic</h2>
-        <p><strong>Course Name:</strong> Algorithmic Problem Solving <br> <strong>Course Code:</strong> 24ECSC205</p>
-
-        <h2>Instructor & University</h2>
-        <p><strong>Instructor:</strong> Arundhati Aralimatti <br> <strong>University:</strong> KLE Technological University, Hubballi</p>
-
-        <h2>Portfolio Topic/Domain</h2>
-        <p>Smart City</p>
-
-        <h2>Inspirational Quote</h2>
-        <p>“The only way to do great work is to love what you do.” – Steve Jobs</p>
+  <!-- FullPage.js Sections -->
+  <div id="fullpage">
+    <!-- Section 1: Introduction -->
+    <div class="section animate-in" id="intro">
+      <h1>City Bus Network Optimization</h1>
+      <div class="content">
+        <p>Our project focuses on optimizing city bus networks to improve efficiency, reduce travel time, and minimize congestion using advanced algorithmic techniques. By leveraging graph algorithms (e.g., Dijkstra, Floyd-Warshall), we aim to determine the shortest routes, optimize bus stop placements, and balance passenger load across buses. Real-world examples include Google Maps route optimization and public transit systems like BMTC in Bangalore that use similar algorithms for route and scheduling efficiency.</p>
+      </div> 
     </div>
-     <div id="course-project" class="content-section">
-        <h1>Course Project Introduction</h1>
-        <h1>RAJPUR</h1>
-        <h2>WELCOME TO OUR TEAM PORTFOLIO ON SMART CITY PROJECT</h2>
-        <img src="smart_city.jpg" alt="Smart City" width="900" height="800"><br>
-        <h2>Problem Space:</h2>
-        <p>Cities are growing rapidly, leading to challenges such as overcrowded roads, increased pollution, and inadequate basic resources like water and electricity. We need innovative solutions to address these issues and enhance urban living.</p>
 
-        <h2>White Paper Findings:</h2>
-        <p><strong>Simple Tech Solutions:</strong> Ideas like energy-efficient street lights, traffic management apps, and sensors for monitoring water usage.</p>
-        <h2>City Design Recommendations:</h2>
-        <ul>
-            <li>Upgrade outdated infrastructure like roads, water pipes, and buildings.</li>
-        </ul>
-
-        <h2>Problem Definition:</h2>
-        <p>Develop a centralized system to streamline the management of university processes.</p>
-    </div>
-            <div class=" .animate-in" id="course-introduction">
-            <div id="COURSE INTRODUCTION" class="center-bar"> </div>
+    <!-- Section 2: About Course -->
+    <div class="section animate-in" id="course-about">
+<div id="COURSE INTRODUCTION" class="center-bar"> </div>
             <h1>COURSE INTRODUCTION</h1>
             <h2>What is the course about?</h2>
             <p>The Design and Analysis of Algorithms course is all about developing a deep understanding of how algorithms work, how they are designed, and how they can be optimized for efficiency.</p>
             <div class="content-row">
                 <div class="content-box">
                     <h2>What is the course about?</h2>
-                    <p>The Design and Analysis of Algorithms cooptimized for efficiency. This course emphasizes:</p>
-                    
+                    <p>The Design and Analysis of Algorithms course is all about developing a deep understanding of how algorithms work, how they are designed, and how they can be optimized for efficiency. This course emphasizes:</p>
+                    <p>- The systematic design of algorithms.<br>- The analysis of their time and space complexities.<br>- The application of mathematical tools to compare algorithm performance.</p>
+                    <p>By studying this, I have gained the skills to approach problems systematically, design solutions, and measure their efficiency.</p>
                 </div>
             </div>
         </div>
 
-        <div class=" .animate-in" id="real-world-connection">
+        <div class="content-section" id="real-world-connection">
+        <div class="section animate-in"  id="real-world-connection">
             <h1>CONNECTION WITH REAL WORLD</h1>
             <h2>What kind of data structures and algorithms have I studied?</h2>
             <p>During the course, I explored a variety of data structures and algorithms, including:</p>
+            <p><strong>Data Structures:</strong> Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hash Tables.</p>
+            <p><strong>Algorithms:</strong> Sorting algorithms like Merge Sort and Quick Sort, graph algorithms like Dijkstra’s and Kruskal’s, and advanced string matching algorithms like Rabin-Karp and Boyer-Moore.</p>
+            <p>Each topic built upon the foundational knowledge, helping me to analyze problems from different perspectives and apply the most suitable data structure or algorithm.</p>
         </div>
 
-        <div class=" .animate-in" id="importance">
+        <div class="content-section" id="importance">
+        <div class="section animate-in"  id="importance">
             <h1>Why is this course important?</h1>
             <p>This course is a stepping stone for anyone aspiring to excel in fields like software engineering, competitive programming, and machine learning. It lays the foundation for efficient problem-solving, a skill crucial in today’s fast-paced technological world. Through this learning portfolio, I aim to demonstrate my understanding and enthusiasm for algorithms and data structures, reflecting on how they shape the software and tools we use daily.</p>
 
@@ -217,13 +230,20 @@
             <p><strong>Iteration</strong></p>
             <ul>
                 <li>Traveling to college every day (repeated routine)</li>
+                <li>Playing the game of chess (turn-based sequences)</li>
+                <li>Preparing for an assembly (step-by-step organization)</li>
+                <li>The process of learning (daily practice and effort)</li>
+                <li>Resource management at a wedding (iterative allocation of resources)</li>
             </ul>
-            
+
             <p><strong>Recursion</strong></p>
             <ul>
                 <li>The tree that has been growing every day (branches resembling the whole tree structure)</li>
+                <li>The growth of cauliflower vegetables (fractal patterns)</li>
+                <li>Matryoshka dolls (nested structure with self-similarity)</li>
+                <li>A calendar (days, weeks, and months recur in predictable patterns)</li>
             </ul>
-            
+
             <p><strong>Backtracking</strong></p>
             <ul>
                 <li>Searching for a new friend’s location (exploring different paths or strategies)</li>
@@ -235,13 +255,16 @@
         <section>
     <h2>2. What is Space and Time Efficiency? Why Are They Important?</h2>
     <h3>Algorithm Efficiency and Complexity</h3>
-  
+    <p><strong>Time Efficiency:</strong> Measures the computational time required to execute an algorithm and represents the number of basic operations performed by an algorithm.</p>
+    <p><strong>Space Efficiency:</strong> Measures the memory (storage) required by an algorithm, tracking how much memory is consumed by the input size and determining how much additional memory is needed to solve a problem.</p>
+
     <h4>Key Principles:</h4>
     <ul>
         <li>A good algorithm executes quickly and saves space in the process.</li>
         <li>We should find a balance between space and time efficiency (space and time complexity).</li>
     </ul>
 
+    <p>In the world of computer science, to perform better, we need to write algorithms that are time-efficient and use less memory. Algorithms should be resource-optimized, solving larger problems with limited computing power, and improving user experience and system performance.</p>
 
     <h4>Different Classes of Problems and Orders of Growth:</h4>
     <table border="1">
@@ -287,6 +310,12 @@
             <h2>3. Takeaway from Different Design Principles from Chapter 2</h2>
 
             <p><strong>Decomposition:</strong> Break complex problems into smaller, manageable pieces to simplify and solve them effectively.</p>
+
+            <p><strong>Pattern Recognition:</strong> Identify recurring patterns in problems to generalize solutions and make predictions.</p>
+
+            <p><strong>Abstraction:</strong> Focus on essential features and ignore unnecessary details to simplify problem-solving.</p>
+
+            <p><strong>Brave vs. Cautious Traversal:</strong>
                 <ul>
                     <li><strong>DFS (Brave):</strong> Explore deeply before backtracking.</li>
                     <li><strong>BFS (Cautious):</strong> Explore level by level.</li>
@@ -294,9 +323,38 @@
             </p>
 
             <p><strong>Pruning:</strong> Skip unnecessary paths to save time and resources (e.g., N-Queen’s problem).</p>
-            <p><strong>Shortest Path Trees:</strong> Showoptimization.</p>
+
+            <p><strong>Lazy Propagation:</strong> Delay updates in data structures like segment trees for efficiency, especially with large datasets.</p>
+
+            <p><strong>Sliding Window:</strong> Efficiently analyze overlapping sub-arrays, useful for tasks like finding maximum sums.</p>
+
+            <p><strong>Level Order Traversal:</strong> Explore tree nodes level by level (similar to BFS).</p>
+
+            <p><strong>Hierarchical Data:</strong> Use parent-child relationships (e.g., family trees) to organize and manage information.</p>
+
+            <p><strong>Edge Relaxation:</strong> Update shortest paths in algorithms like Dijkstra’s by rechecking neighboring paths.</p>
+
+            <p><strong>Balancing and Rotations:</strong> Prevent unbalanced trees in AVL and Red-Black trees to maintain efficient operations.</p>
+
+            <p><strong>Kleene Closure:</strong> Find relationships in graphs and determine all possible connections (transitive closure).</p>
+
+            <p><strong>Pre-Computing:</strong> Calculate and store frequently needed results in advance to save runtime (e.g., lookup tables).</p>
+
+            <p><strong>Parental Dominance:</strong> Maintain efficiency in heaps by ensuring the root is the largest or smallest element.</p>
+
+            <p><strong>Prefix and Suffix:</strong> Key for pattern matching and string operations in tasks like searching and bioinformatics.</p>
+
+            <p><strong>Partitioning:</strong> Divide problems into smaller parts for recursion, widely used in sorting and searching.</p>
+
+            <p><strong>Bit Manipulations:</strong> Use operations like AND, OR, XOR for memory-efficient algorithms (e.g., Fenwick trees).</p>
+
+            <p><strong>Memoization:</strong> Store previous results in recursive algorithms to avoid redundant calculations.</p>
+
+            <p><strong>Invariants:</strong> Conditions that stay constant during execution, ensuring correctness (e.g., maintaining sorted order).</p>
+
+            <p><strong>Shortest Path Trees:</strong> Show shortest routes from a starting node, useful for navigation and network optimization.</p>
         </section>
-            
+
     <section>
     <h4>4. Hierarchical data and how different tree data structures solve and optimize problems</h4>
     <table border='2'>
@@ -370,14 +428,21 @@
             <p><strong>Binary Search (Binary Index Tree):</strong></p>
             <ul>
                 <li><strong>Principle:</strong> Divide and conquer strategy</li>
+                <li><strong>Efficiency:</strong> O(log n)</li>
+                <li><strong>Requirements:</strong> Sorted array</li>
+                <li><strong>Applications:</strong> Used in large sorted databases</li>
             </ul>
             <p><strong>Sliding Window Technique:</strong></p>
             <ul>
                 <li><strong>Principle:</strong> Maintain a window of elements</li>
+                <li><strong>Efficiency:</strong> O(n)</li>
+                <li><strong>Applications:</strong> Used in network traffic analysis and signal processing</li>
             </ul>
             <p><strong>Segment Tree:</strong></p>
             <ul>
                 <li><strong>Principle:</strong> Divide array into segments</li>
+                <li><strong>Efficiency:</strong> O(log n)</li>
+                <li><strong>Applications:</strong> Range min/max queries</li>
             </ul>
         </section>
 
@@ -385,25 +450,34 @@
             <h4>6. Trees and graphs and their traversals</h4>
             <p><strong>Differentiating Trees and Graphs:</strong></p>
             <ul>
-            
+                <li><strong>Tree:</strong> A simple structure with one main "root" and branches that don’t loop back (no cycles). It is like a family tree where each person has only one parent (except for the root). Example: A folder structure on your computer.</li>
+                <li><strong>Graph:</strong> A graph is more complex. It can have cycles (loops) and no specific structure. Nodes (points) can be connected in many different ways, not necessarily hierarchically. Example: A map of cities connected by roads, where you can travel in multiple directions.</li>
             </ul>
             <p><strong>Tree Traversals (Ways to visit nodes in a tree):</strong></p>
             <ul>
-                <li><strong>In-Order:</strong> V search trees.</li>
+                <li><strong>In-Order:</strong> Visit left side, then the node, then right side. Used for: Sorting data in binary search trees.</li>
+                <li><strong>Pre-Order:</strong> Visit the node first, then the left side, and then the right side. Used for: Making a copy of the tree.</li>
+                <li><strong>Post-Order:</strong> Visit the left side first, then the right side, and finally the node. Used for: Deleting nodes.</li>
+                <li><strong>Level-Order (BFS):</strong> Visit nodes level by level from the root. Used for: Finding the shortest path in simple trees.</li>
             </ul>
             <p><strong>Graph Traversals (Ways to visit nodes in a graph):</strong></p>
             <ul>
-                <li><strong>DFS (Depth-First Search):</strong> Start at oneng connected components.</li>
+                <li><strong>DFS (Depth-First Search):</strong> Start at one node, go as deep as possible, and backtrack when needed. Used for: Solving mazes, finding connected components.</li>
+                <li><strong>BFS (Breadth-First Search):</strong> Visit neighbors first, then their neighbors, and so on. Used for: Finding the shortest path in simple graphs, like finding the shortest route on a map.</li>
             </ul>
             <p><strong>Applications:</strong></p>
             <ul>
                 <li><strong>Tree Applications:</strong></li>
                 <ul>
                     <li>File System: Organizing folders and files.</li>
+                    <li>Binary Search Tree (BST): Efficiently finding data in databases.</li>
+                    <li>Decision Trees: Used in making decisions, like in machine learning.</li>
                 </ul>
                 <li><strong>Graph Applications:</strong></li>
                 <ul>
                     <li>Social Networks: Connections between people (friends, followers).</li>
+                    <li>Maps/Navigation: Finding the shortest route between cities or locations.</li>
+                    <li>Web Crawlers: Searching the internet by following links between websites.</li>
                 </ul>
             </ul>
         </section>
@@ -412,33 +486,80 @@
     <h4>7. Deliberate on Sorting and Searching Algorithms, the Technique Behind Each, and How They Connect to the Real World</h4>
 
     <p><strong>Sorting Algorithms</strong></p>
-    
+
     <ul>
         <li><strong>Bubble Sort:</strong>
             <p><strong>How it works:</strong> Compares adjacent items and swaps them if they’re out of order. Repeats until the list is sorted.</p>
+            <p><strong>Real-world example:</strong> Sorting a deck of cards by comparing two cards at a time and swapping them.</p>
+            <p><strong>Use:</strong> Best for small datasets, inefficient for large ones.</p>
+        </li>
+        <li><strong>Selection Sort:</strong>
+            <p><strong>How it works:</strong> Finds the smallest item, moves it to the front, and repeats for the rest of the list.</p>
+            <p><strong>Real-world example:</strong> Organizing books by picking the shortest book first.</p>
+            <p><strong>Use:</strong> Useful when minimizing swaps, but not the fastest for large datasets.</p>
+        </li>
+        <li><strong>Insertion Sort:</strong>
+            <p><strong>How it works:</strong> Builds a sorted list one item at a time by inserting each item in its correct position.</p>
+            <p><strong>Real-world example:</strong> Sorting a deck of cards by picking and placing cards in the right order.</p>
+            <p><strong>Use:</strong> Great for small or nearly sorted datasets.</p>
+        </li>
+        <li><strong>Merge Sort:</strong>
+            <p><strong>How it works:</strong> Splits the list, sorts each part, and merges them back together.</p>
+            <p><strong>Real-world example:</strong> Sorting papers by dividing them into smaller stacks, sorting, and combining them.</p>
+            <p><strong>Use:</strong> Ideal for large datasets and external sorting.</p>
+        </li>
+        <li><strong>Quick Sort:</strong>
+            <p><strong>How it works:</strong> Picks a pivot, places smaller elements on one side, larger ones on the other, and repeats.</p>
+            <p><strong>Real-world example:</strong> Dividing a group by height into smaller groups and sorting each.</p>
+            <p><strong>Use:</strong> Fast for large datasets, but pivot choice matters.</p>
+        </li>
+        <li><strong>Heap Sort:</strong>
+            <p><strong>How it works:</strong> Builds a heap and repeatedly extracts the largest or smallest element for the sorted list.</p>
+            <p><strong>Real-world example:</strong> Priority queue where highest-priority items are handled first.</p>
+            <p><strong>Use:</strong> Efficient for priority queues and structured sorting.</p>
         </li>
     </ul>
-    
+
     <p><strong>Searching Algorithms</strong></p>
     <ul>
         <li><strong>Linear Search:</strong>
             <p><strong>How it works:</strong> Checks each item one by one until the target is found.</p>
+            <p><strong>Real-world example:</strong> Searching for a name in a phone book sequentially.</p>
+            <p><strong>Use:</strong> Simple but slow for large datasets.</p>
+        </li>
+        <li><strong>Binary Search:</strong>
+            <p><strong>How it works:</strong> Works on sorted lists, checks the middle, and narrows the search range by half each time.</p>
+            <p><strong>Real-world example:</strong> Finding a word in a dictionary by dividing the search range.</p>
+            <p><strong>Use:</strong> Very efficient for sorted lists.</p>
+        </li>
+        <li><strong>Breadth-First Search (BFS):</strong>
+            <p><strong>How it works:</strong> Explores all nodes at the current level before moving to the next.</p>
+            <p><strong>Real-world example:</strong> Exploring all rooms on one floor of a building before moving to the next floor.</p>
+            <p><strong>Use:</strong> Best for finding the shortest path in unweighted graphs.</p>
+        </li>
+        <li><strong>Depth-First Search (DFS):</strong>
+            <p><strong>How it works:</strong> Goes as deep as possible along one path before backtracking and trying another.</p>
+            <p><strong>Real-world example:</strong> Exploring a maze by going deep down one path until a dead end.</p>
+            <p><strong>Use:</strong> Useful for exploring all paths or solutions in puzzles and games.</p>
+        </li>
     </ul>
 
     <p><strong>Real World Connections</strong></p>
     <ul>
         <li><strong>Sorting:</strong> Used in organizing files, arranging products, or sorting cards.</li>
-        
+        <li><strong>Searching:</strong> Essential for finding contacts, books, or other data.</li>
+        <li><strong>BFS:</strong> Helps in GPS systems to find the shortest routes and in social networks to find connections.</li>
+        <li><strong>DFS:</strong> Useful for puzzle-solving and exploring all possible moves in games.</li>
     </ul>
 </section>
 
 
        <section>
     <h4>8. Discuss the Importance of Graph Algorithms with Respect to Spanning Trees and Shortest Paths</h4>
-    
+
     <p><strong>Dijkstra's Algorithm</strong></p>
     <ul>
-        <li><strong>Purpose:</strong> Finds e to all other nodes.</li>
+        <li><strong>Purpose:</strong> Finds the shortest path from a source node to all other nodes.</li>
         <li><strong>Type:</strong> Single-source shortest path algorithm.</li>
         <li><strong>Use:</strong> Best for weighted graphs with non-negative weights.</li>
     </ul>
@@ -446,191 +567,107 @@
     <p><strong>Floyd-Warshall Algorithm</strong></p>
     <ul>
         <li><strong>Purpose:</strong> Calculates shortest paths between all pairs of nodes.</li>
+        <li><strong>Type:</strong> All-pairs shortest path algorithm.</li>
+        <li><strong>Use:</strong> Suitable for dense graphs.</li>
     </ul>
 
     <p><strong>Prim's Algorithm</strong></p>
     <ul>
         <li><strong>Purpose:</strong> Finds the Minimum Spanning Tree (MST) of a graph.</li>
+        <li><strong>Type:</strong> Greedy algorithm.</li>
+        <li><strong>Use:</strong> Ideal for network design and minimizing total connection cost.</li>
     </ul>
 
     <p><strong>Shortest Path</strong></p>
     <ul>
         <li><strong>Purpose:</strong> Finds the minimum path between nodes.</li>
+        <li><strong>Examples:</strong> Dijkstra’s, Bellman-Ford algorithms.</li>
+        <li><strong>Use:</strong> Navigation systems and network optimization.</li>
     </ul>
 
     <p><strong>Spanning Trees</strong></p>
     <ul>
         <li><strong>Purpose:</strong> Optimizes network design by connecting all nodes with minimal edges.</li>
+        <li><strong>Examples:</strong> Prim’s, Kruskal’s algorithms.</li>
+        <li><strong>Use:</strong> Efficient for designing layouts like electrical grids or road networks.</li>
     </ul>
 </section>
-            
+
         <section>
     <h4>9. Discuss the Different Studied Algorithm Design Techniques</h4>
-    
+
     <p><strong>Algorithm Design Techniques</strong></p>
     <ul>
         <li><strong>Brute Force:</strong> Solve problems by trying all possible solutions, guaranteed to find the correct one but inefficient for large inputs.</li>
-        
+        <li><strong>Divide and Conquer:</strong> Break a problem into smaller subproblems, solve them recursively, and combine results (e.g., Merge Sort).</li>
+        <li><strong>Decrease and Conquer:</strong> Reduce the problem size by solving a smaller instance of the problem and building up to the solution (e.g., Insertion Sort).</li>
+        <li><strong>Transform and Conquer:</strong> Transform the problem into an easier form and solve it more efficiently (e.g., Binary Search).</li>
+        <li><strong>Greedy Algorithm:</strong> Make the locally optimal choice at each step, hoping it leads to the global optimum (e.g., Huffman Coding).</li>
     </ul>
 
      <p><strong>Algorithms</strong></p>
 
     <ul>
-        <li><strong>Boyer-Moore Algorithm:</strong> A string searching algori skipping sections of the text.</li>
-        <li><strong>Warshall’s Algorithm:</strong> Computes the trween all pairs of vertices.</li>
+        <li><strong>Boyer-Moore Algorithm:</strong> A string searching algorithm that efficiently finds a substring within a text by skipping sections of the text.</li>
+        <li><strong>Rabin-Karp Algorithm:</strong> Uses hashing to find a substring in a string, efficient for multiple pattern searches.</li>
+        <li><strong>Dijkstra’s Algorithm:</strong> Finds the shortest path between two nodes in a weighted graph by iteratively selecting the closest node.</li>
+        <li><strong>Floyd-Warshall Algorithm:</strong> Finds the shortest paths between all pairs of nodes in a weighted graph, using dynamic programming.</li>
+        <li><strong>Kruskal’s Algorithm:</strong> Finds the Minimum Spanning Tree (MST) by sorting edges and connecting nodes with the smallest weights without forming cycles.</li>
+        <li><strong>Prim’s Algorithm:</strong> Finds the MST by growing a tree one edge at a time, always selecting the smallest edge that connects a node to the tree.</li>
+        <li><strong>Warshall’s Algorithm:</strong> Computes the transitive closure of a directed graph, determining reachability between all pairs of vertices.</li>
     </ul>
 
     <p><strong>Reflection on Algorithm Design Techniques</strong></p>
+    <p>There are several key algorithm design techniques, each serving different problem-solving needs. Backtracking explores all possible solutions and discards those that don’t work, useful for problems like N-Queens or Sudoku. Divide and conquer splits a problem into smaller sub-problems, solves them individually, and then combines the results, as seen in merge sort and quick sort. Brute force relies on trying every possible solution to find the correct one, used in algorithms like the Rabin-Karp algorithm for string matching. Graph algorithms like Dijkstra’s and Floyd-Warshall help find the shortest path in graphs, while Kruskal’s algorithm is used for finding the minimum spanning tree.</p>
 </section>
-            
-        </div>
-    <div id="business-cases" class="content-section">
-        <h1>Business Cases</h1>
-        
-        <section>
-            <h2>Problem Definition</h2>
-            <p>To develop a centralized system to streamline the management of university processes.</p>
-        </section>
-
-<section>
-    <h2>Business Cases Identified:</h2>
-<table border="1">
-    <thead>
-        <tr>
-            <th>SL NO</th>
-            <th>Business Case Identified</th>
-            <th>Description</th>
-            <th>Owner</th>
-            <th>Probable Tools</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Student Admission Management</td>
-            <td>Develop automated system that streamlines the application process, including form submission, document verification, and seat allocation.</td>
-            <td>Anuja H</td>
-            <td>Hash Table, Priority Queue.</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Course Scheduling</td>
-            <td>Use greedy algorithm, where courses are assigned to available time slots based on constraints like instructor availability, room size, and student preferences.</td>
-            <td>Rashmi K</td>
-            <td>BST, Backtracking, Graphs</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Faculty Recruitment and Management</td>
-            <td>Implementing an automated application and screening system, where candidates submit resumes and are evaluated based on predefined criteria.</td>
-            <td>Lata R</td>
-            <td>Hash Table, Priority Queue, Balanced Binary Trees(AVL/R-B Tree)</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Students Performance Tracking</td>
-
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Parking Management</td>
-            <td>Implementing an automated application and screening systemfined criteria.</td>
-            <td>Rashmi & Lata R</td>
-            <td>Hash Maps, Trees, Priority Queue</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>Feedback and Quality Assurance</td>
-            <td>Developing Automated systems can prioritizg the process for better decision-making</td>
-            <td>Anuja H & Manasi</td>
-            <td>Priority Queue, Dijkstra’s Algorithm</td>
-        </tr>
-    </tbody>
-</table>   
-    <section>
-          <br>
-        <br>
-        <section>
-            <h2>SDG Goals</h2>
-<p>The Sustainable Development Gticularly relevant to this project:</p>
-
-<ul>
-    <li><strong>SDG 4 - Quality Education:</strong> <p>Initiatives such as Student Ade Tracking aim  quality in education systems.<p></li>
-</ul>
-    <a href="Know More About SDGs.html" target="_blank">Know More</a>
- </section>
-        
-    <h2>Team Details:</h2>
-
-<div style="display: flex; flex-wrap: wrap; gap: 20px;">
-    <div style="flex: 1; min-width: 250px; text-align: center;">
-        <h3 style="font-size: 24px;">Member 1:</h3>
-        <p style="font-size: 18px;">
-            <strong>Name:</strong> Anuja Hanamagoudar<br>
-            <img src="Proffesional_Photo.jpg" alt="Anuja Hanamagoudar" width="200" height="250"><br>
-            <strong>Roll No:</strong> 442<br>
-            <strong>USN:</strong> 01FE23BCS263<br>
-            <strong>Division:</strong> D<br>
-<header>
-<a href="business_case.html" target="_blank"><strong>1.Student Admission Management</strong></a>
-<header>
-        </p>
     </div>
-    <div style="flex: 1; min-width: 250px; text-align: center;">
-        <h3 style="font-size: 24px;">Member 2:</h3>
-        <p style="font-size: 18px;">
-            <strong>Name:</strong> Rashmi Khot<br>
-            <img src="rashmi.jpg" alt="Rashmi Khot" width="200" height="250"><br>
-            <strong>Roll No:</strong> 58<br>
-            <strong>USN:</strong> 01FE23BCS408<br>
-            <strong>Division:</strong> D<br>
 
- <header>
-    <a href="https://rashmikhot.github.io/DaaPortfolio.github.io/index.html" target="_blank"><strong>2.Course Scheduling</strong></a>
-<header>
-        
-        </p>
+    <!-- Section 3: Course Project -->
+    <div class="section animate-in" id="course-project">
+      <h1>Course Project</h1>
+      <div class="content">
+        <p>Developing a simulation model for an optimized city bus network, utilizing data-driven approaches for route planning and scheduling.</p>
+      </div>
     </div>
-    <div style="flex: 1; min-width: 250px; text-align: center;">
-        <h3 style="font-size: 24px;">Member 3:</h3>
-        <p style="font-size: 18px;">
-            <strong>Name:</strong> Lata Rathod<br>
-            <img src="lata.jpg" alt="Lata Rathod" width="200" height="250"><br>
-            <strong>Roll No:</strong> 459<br>
-            <strong>USN:</strong> 01FE23BCS409<br>
-            <strong>Division:</strong> D<br>
- <header>
-    <a href="https://lata-qa.github.io/daa1/" target="_blank"><strong>3.Faculty Recruitment and Management</strong></a>
-<header>
-        </p>
-    </div>
-    <div style="flex: 1; min-width: 250px; text-align: center;">
-        <h3 style="font-size: 24px;">Member 4:</h3>
-        <p style="font-size: 18px;">
-            <strong>Name:</strong> Manasi Divate<br>
-            <img src="manasi.jpg" alt="Manasi Divate" width="200" height="250"><br>
-            <strong>Roll No:</strong> 453<br>
-            <strong>USN:</strong> 01FE23BCS403<br>
-            <strong>Division:</strong> D<br>
- <header>
-    <a href="https://manasi-divate.github.io/ManasiDaaPortfolio.github.io/" target="_blank"><strong>4.Students Performance Tracking</strong></a>
-<header>
-        </p>
-</div>
-    <div style="flex: 1; min-width: 250px; text-align: center;">
-        <h3 style="font-size: 24px;">Member 5:</h3>
-        <p style="font-size: 18px;">
-            <strong>Name:</strong> Aishwarya Kotagi<br>
-            <img src="....jpg" alt="Aishwarya Kotagi" width="200" height="250"><br>
-            <strong>Roll No:</strong> 401<br>
-            <strong>USN:</strong> 01FE23BCS101<br>
-            <strong>Division:</strong> D<br>
 
-        </p>
+    <!-- Section 4: Team Assessment -->
+    <div class="section animate-in" id="team-assessment">
+      <h1>Team Members</h1>
+      <div class="content">
+        <p><strong>Md Waseem R Naikar</strong></p>
+        <p><a href="BC.html" style="color: #1a5c7e;">View Business Case</a></p>
+      </div>
     </div>
-     <a href="https://rashmikhot.github.io/DaaPortfolio.github.io/ProjectImplementation2.html" target="_blank"><strong>5.Parking Management</strong></a>
-       <a href="Feedback.html" target="_blank"><strong>6.Feedback And Quality Assurance</strong></a>
-       
-</div>
+
+    <!-- Section 5: Learning Reflections -->
+    <div class="section animate-in" id="course-learning">
+      <h1>Learning Reflections</h1>
+      <div class="content">
+        <p>Reflecting on algorithmic problem-solving techniques, including efficiency analysis, practical applications, and optimization modeling.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FullPage.js Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.19/fullpage.min.js"></script>
+  <script>
+    new fullpage('#fullpage', {
+      scrollBar: true, /* Disable scrolling */
+      navigation: false, /* No side navigation */
+      navigationPosition: 'right',
+      showActiveTooltip: false,
+    });
+
+    // Intersection Observer for Animation
+    const sections = document.querySelectorAll('.animate-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
