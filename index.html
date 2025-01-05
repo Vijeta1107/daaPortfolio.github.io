@@ -666,10 +666,9 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observe.unobserve(entry.target);
         }
       });
-    }{threshold:0.1});
+    });
     sections.forEach(section => observer.observe(section));
   </script>
 </body>
